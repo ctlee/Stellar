@@ -20,9 +20,11 @@ RM = /bin/rm
 # Switches for C compiler.  -DNDEBUG suppresses assertions from assert.h
 CSWITCHES = -g -pg -DSELF_CHECK -DLINUX -Wall -Wconversion -Wstrict-prototypes -Wno-strict-aliasing -fno-strict-aliasing -I$(SRC) -I/usr/X11R6/include -L/usr/X11R6/lib
 CSWITCHESFAST = -DSELF_CHECK -g -DLINUX -O3 -Wall -Wconversion -Wstrict-prototypes -Wno-strict-aliasing -fno-strict-aliasing -I$(SRC) -I/usr/X11R6/include -L/usr/X11R6/lib
-CSWITCHESMAC = -arch i386 -arch ppc -g -pg -fast -DSELF_CHECK -Wall -Wno-strict-aliasing -fno-strict-aliasing -Wconversion -Wstrict-prototypes -I$(SRC) -I/usr/X11R6/include -L/usr/X11R6/lib
+#CSWITCHESMAC = -arch i386 -arch ppc -g -pg -fast -DSELF_CHECK -Wall -Wno-strict-aliasing -fno-strict-aliasing -Wconversion -Wstrict-prototypes -I$(SRC) -I/usr/X11R6/include -L/usr/X11R6/lib
+CSWITCHESMAC = -g -pg -fast -DSELF_CHECK -Wall -Wno-strict-aliasing -fno-strict-aliasing -Wconversion -Wstrict-prototypes -I$(SRC) -I/usr/X11R6/include -L/usr/X11R6/lib
 CSWITCHESSTELLARMAC = -pedantic -g -pg  -DSELF_CHECK -Wall -Wno-strict-aliasing -fno-strict-aliasing -Wconversion -Wstrict-prototypes -I$(SRC)
-CSWITCHESSTELLARMACFAST = -arch i386 -arch ppc -pedantic -fast -Wall -Wno-strict-aliasing -fno-strict-aliasing -Wconversion -Wstrict-prototypes -I$(SRC)
+#CSWITCHESSTELLARMACFAST = -arch i386 -arch ppc -pedantic -fast -Wall -Wno-strict-aliasing -fno-strict-aliasing -Wconversion -Wstrict-prototypes -I$(SRC)
+CSWITCHESSTELLARMACFAST = -pedantic -fast -Wall -Wno-strict-aliasing -fno-strict-aliasing -Wconversion -Wstrict-prototypes -I$(SRC)
 
 # Where to find the basic X Windows (X11) #include files and libraries
 SHOWMESWITCHES = -I/usr/X11R6/include -L/usr/X11R6/lib
