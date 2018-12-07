@@ -8,15 +8,19 @@ set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 #####################################################################
 project(Stellar VERSION 1.0.0)
 
+option(SINGLE "Use single precision" OFF)
+option(STELLAR_SELF_CHECK "Compile Starbase with self-checks" OFF)
+option(STELLAR_PARANOID "Compile Starbase in PARANOID mode" OFF)
+
+set(TARGET_BINS "")
+set(TARGET_LIBS "")
+set(COMPILE_DEFS "")
+
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Release")
 endif()
 
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
-
-# if(WIN32)
-#     set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-# endif()
 
 add_library(Starbase STATIC "src/Starbase.c" "src/Starbase.h")
 target_compile_definitions(Starbase PRIVATE NOMAIN)
